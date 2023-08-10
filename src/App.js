@@ -1,7 +1,13 @@
-import "./App.css";
+import CreatePost from "./components/Posts/CreatePost";
+import CreatePostModal from "./components/Posts/CreatePostModal";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="container w-2/5 mx-auto p-2">
+      <CreatePost />
+      {/* <CreatePostModal /> */}
+    </div>
+  );
 }
 
 export default App;
