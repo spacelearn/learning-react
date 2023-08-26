@@ -1,11 +1,24 @@
-const Icon = ({ iconPath, iconDescription }) => {
+const Icon = ({
+  iconPath,
+  iconDescription,
+  size = "",
+  className: externalClassName = "",
+}) => {
+  let classes = `inline-block ${externalClassName}`;
+  let width = "24px";
+  let height = "24px";
+
+  if (size === "sm") {
+    width = "12px";
+    height = "12px";
+  }
   return (
     <img
-      className="inline-block mr-2"
+      className={classes}
       src={iconPath}
       alt={iconDescription}
-      width="24px"
-      height="24px"
+      width={width}
+      height={height}
     />
   );
 };

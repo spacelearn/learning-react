@@ -1,19 +1,15 @@
 import Icon from "./Icon";
 import Label from "./Label";
+import PostType from "./PostType";
 
-const PostTypes = ({ types }) => {
+const PostTypes = ({ children }) => {
   return (
-    <div
-      className="mt-3 pt-2 border-t border-white flex list-none justify-evenly"
+    <ul
       style={{ borderColor: "rgba(255,255,255,.1)" }}
+      className="mt-3 pt-2 border-t border-white flex justify-evenly list-none"
     >
-      {types.map((type) => (
-        <li className="w-full p-2 rounded-md flex justify-center items-center hover:bg-[#3A3B3C]">
-          <Icon iconPath={type.icon} iconDescription={type.description} />
-          <Label>{type.label}</Label>
-        </li>
-      ))}
-    </div>
+      {children}
+    </ul>
   );
 };
 

@@ -1,12 +1,14 @@
 import CreatePost from "./components/Posts/CreatePost";
+import ExercisePanel from "./components/Layout/ExercisePanel";
+import userPhoto from "./assets/jiyo-profile.jpeg";
 import CreatePostModal from "./components/Posts/CreatePostModal";
 
 function App() {
   return (
-    <div className="container w-2/5 mx-auto p-2">
-      <CreatePost />
-      {/* <CreatePostModal /> */}
-    </div>
+    <ExercisePanel>
+      <CreatePost userPhoto={userPhoto} userName="Jiyo Collin" />
+      <CreatePostModal />
+    </ExercisePanel>
   );
 }
 

@@ -1,15 +1,16 @@
 import PostTypes from "./PostTypes/PostTypes";
-import userPhoto from "../../assets/jiyo-profile.jpeg";
 import RoundedPhoto from "./RoundedPhoto";
 import RoundedTextbox from "./RoundedTextbox";
 import videoIcon from "../../assets/icon/video.png";
 import photoIcon from "../../assets/icon/photo.png";
 import feelingIcon from "../../assets/icon/feeling.png";
 import Card from "../UI/Card";
+import PostType from "./PostTypes/PostType";
+import Icon from "./PostTypes/Icon";
+import Label from "./PostTypes/Label";
 
-const CreatePost = () => {
-  const user = "Jiyo Collin";
-  const types = [
+const CreatePost = ({ userPhoto, userName }) => {
+  const defaultTypes = [
     {
       icon: videoIcon,
       description: "Video Icon",
@@ -31,9 +32,22 @@ const CreatePost = () => {
     <Card>
       <div className="flex">
         <RoundedPhoto photoPath={userPhoto} photoDescription="User Photo" />
-        <RoundedTextbox placeholder={`What's on your mind, ${user}?`} />
+        <RoundedTextbox>{`What's on your mind, ${userName}?`}</RoundedTextbox>
       </div>
-      <PostTypes types={types} />
+      <PostTypes>
+        {defaultTypes.map((type) => (
+          <PostType>
+            <span className="mr-2">
+              <Icon
+                className="text-white"
+                iconPath={type.icon}
+                iconDescription={type.description}
+              />
+            </span>
+            <Label>{type.label}</Label>
+          </PostType>
+        ))}
+      </PostTypes>
     </Card>
   );
 };

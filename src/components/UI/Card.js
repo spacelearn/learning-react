@@ -1,9 +1,7 @@
-const Card = ({ children }) => {
+const Card = ({ children, className }) => {
+  const classes = `px-4 pt-3 pb-2.5 mb-4 rounded-md ${className}`;
   return (
-    <div
-      className="px-4 pt-3 pb-2.5 mb-4 rounded-md"
-      style={{ backgroundColor: "#242526" }}
-    >
+    <div className={classes} style={{ backgroundColor: "#242526" }}>
       {children}
     </div>
   );

@@ -3,7 +3,7 @@ const RoundedPhoto = ({ photoPath, photoDescription }) => {
     <img
       src={photoPath}
       alt={photoDescription}
-      width="40px"
+      width="45px"
       height="40px"
       className="rounded-full mr-2"
     />
