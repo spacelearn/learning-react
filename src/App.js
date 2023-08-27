@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import CreatePost from "./components/Posts/CreatePost";
+import ExercisePanel from "./components/Layout/ExercisePanel";
+import userPhoto from "./assets/jiyo-profile.jpeg";
+import CreatePostModal from "./components/Posts/CreatePostModal";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ExercisePanel>
+      <CreatePost userPhoto={userPhoto} userName="Jiyo Collin" />
+      <CreatePostModal />
+    </ExercisePanel>
   );
 }
 
